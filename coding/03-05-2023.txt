@@ -1,0 +1,114 @@
+date 03-05-2023
+
+11.remove the characters from string 1 which are present in string 2
+using System;
+class str{
+static void Main(string[] args){
+string firstString = "HelloWorld";
+string secondString = "eo";
+
+string resultString="";
+foreach (char c in firstString)
+{
+    if (!secondString.Contains(c))
+    {
+        resultString += c;
+    }
+}
+
+Console.WriteLine(resultString);}}
+
+12. How to print all permutation of a string?
+
+13.check whether the string is anagram or not?
+
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+class anagram{
+    static void Main(string[] args){
+        bool flag=isAnagram("silent","listen");
+        Console.WriteLine("isAnagram: "+flag);
+    }
+    public static bool isAnagram(string str1, string str2){
+        str1=str1.ToLower().Replace(" ","");
+        str2=str2.ToLower().Replace(" ","");
+        
+        char[] arr1=str1.ToCharArray();
+        char[] arr2=str2.ToCharArray();
+        Array.Sort(arr1);
+        Array.Sort(arr2);
+        
+        if(arr1.SequenceEqual(arr2)){
+            return true;
+        }
+        else{
+            return false;
+        }
+        
+    }
+}
+
+14.wap to read name(program) and print letters in asc order (agmoprr)
+
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+class anagram{
+    static void Main(string[] args){
+        Console.WriteLine("Enter a string");
+        string str=Console.ReadLine();
+        char[] arr1=str.ToCharArray();
+        Array.Sort(arr1);
+        Console.WriteLine("In ascending order");
+        for(int i=0;i<arr1.Length;i++){
+            Console.WriteLine(arr1[i]);
+        }
+    }
+    
+}
+
+15. wap to read a number (28156437) and it should print digits order wise(12345678)
+
+using System;
+using System.Linq;
+
+var digit = 2927466;
+var res=String.Join("", digit.ToString().ToCharArray().OrderBy(x => x));
+Console.WriteLine(res);
+
+16. take 10 integers from user and print their average
+
+using System;
+
+double sum=0;
+Console.WriteLine("Enter 10 integer numbers");
+for(int i=0;i<10;i++){
+    int n=Convert.ToInt32(Console.ReadLine());
+    sum=sum+n;
+}
+double y=sum/10;
+Console.WriteLine("Sum is "+sum+" and its average "+y);
+
+17. print sum of even and odd numbers
+
+using System;
+
+int sum1=0;
+int sum2=0;
+Console.WriteLine("Enter 10 integer numbers");
+for(int i=0;i<10;i++){
+    int n=Convert.ToInt32(Console.ReadLine());
+    if(n%2==0){
+        sum1=sum1+n;
+    }
+    else{
+        sum2=sum2+n;
+       
+    }
+}
+Console.WriteLine("Sum of even integers "+sum1+" and sum of odd integers "+sum2);
+
+18.

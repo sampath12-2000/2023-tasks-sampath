@@ -1,0 +1,146 @@
+18. print no of times char a occured in the input entered by user
+
+using System;
+using System.Linq;
+Console.WriteLine("Enter any length of string which contains character 'a'");
+
+string str=Console.ReadLine();
+char chtofind='a';
+int len=str.Length-str.Replace(chtofind.ToString(),"").Length;
+Console.WriteLine("Char A occured "+len+" times in the given string "+str);
+
+19. check leap year or not
+
+using System;
+
+Console.WriteLine("Enter a number to check whether it is a leap year or not");
+int n=Convert.ToInt32(Console.ReadLine());
+if((n%100==0 && n%4==0)|| n%4==0){
+    Console.WriteLine("Entered input "+n+" is a leap year");
+}
+else{
+    Console.WriteLine("Entered input "+n+" is not a leap year");
+}
+
+20.find largest and smallest numbers from an array of random numbers
+
+using System;
+
+int[] arr={2,83,44,1,87,65,36,49,99};
+int max=arr[0],min=arr[0];
+for(int i=0;i<arr.Length;i++){
+    if(arr[i]>max){
+        max=arr[i];
+    }
+    if(arr[i]<min){
+        min=arr[i];
+    }
+}
+Console.WriteLine("Maximum is "+max+" and minimum is "+min);
+
+21.print only not repeated digits in the array
+
+using System;
+
+int[] arr={1,2,2,3,4,4,5,6,6,7};
+for(int i=0;i<arr.Length;i++){
+    int j;
+    for(j=0;j<arr.Length;j++){
+        if(arr[i]==arr[j] && i!=j)
+        break;
+}
+if(j==arr.Length)
+Console.WriteLine(arr[i]+"\n");
+}
+
+22.print second largest number in the array
+
+using System;
+using System.Collections;
+
+int[] arr={2,83,44,1,87,65,36,49,99};
+Array.Sort(arr);
+    Console.WriteLine(arr[arr.Length-2]);
+
+23.sort the array without using inbuilt functions.
+
+using System;
+
+int[] arr1=new int[] {76,32,14,56,98,2,3};
+int temp=0;
+
+for(int i=0;i<arr1.Length;i++){
+    for(int j=i+1;j<arr1.Length;j++){
+        if(arr1[i]>arr1[j]){
+            temp=arr1[i];
+            arr1[i]=arr1[j];
+            arr1[j]=temp;
+        }
+    }
+}
+Console.WriteLine("Array in ascending order");
+foreach(var x in arr1){
+    Console.WriteLine(x);
+}
+
+24. printing odd and even numbers from the array
+
+int i, n, even = 0, odd = 0;  
+            Console.WriteLine("Enter the number of elements to be inserted: ");  
+            n = Convert.ToInt32(Console.ReadLine());  
+            int[] a = new int[n];  
+            Console.WriteLine("Enter the array elements:");  
+            for (i = 0; i < n; i++) {  
+                a[i] = Convert.ToInt32(Console.ReadLine());  
+            }  
+            for (i = 0; i < n; i++) {  
+                if (a[i] % 2 == 0) {  
+                    even = even;  
+                    even++;  
+                } else {  
+                    odd = odd;  
+                    odd++;  
+                }  
+            }  
+            Console.WriteLine("Number of even terms are: " + even);  
+            Console.WriteLine("Number of odd terms are: " + odd);  
+            Console.ReadLine(); 
+
+25. merging two array into one array
+
+using System;
+int[] array1 = new int[] { 1, 2, 3 };
+int[] array2 = new int[] { 4, 5, 6 };
+
+int[] result = new int[array1.Length + array2.Length];
+for (int i = 0; i < array1.Length; i++) {
+    result[i] = array1[i];
+}
+for (int i = 0; i < array2.Length; i++) {
+    result[array1.Length + i] = array2[i];
+}
+Console.WriteLine("Result Array: [{0}]", string.Join(", ", result));
+
+
+26. finding prime factors of a number
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int a, b;
+        Console.WriteLine("Please enter your integer: ");
+        a = int.Parse(Console.ReadLine());
+        for (b = 1; b <= a; b++)
+        {
+            if (a % b == 0)
+            {
+                Console.WriteLine(b + " is a factor of " + a);
+            }
+        }
+        Console.ReadLine();
+
+
+
+    }
+}
