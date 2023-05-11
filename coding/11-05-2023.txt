@@ -1,0 +1,231 @@
+27. prime numbers within a given range or between two numbers
+
+Console.WriteLine("Enter the Range :");
+            int start = int.Parse(Console.ReadLine()); 
+            int end = int.Parse(Console.ReadLine()); ; 
+
+            Console.Write("Prime numbers between "+start+" and "+end+" : ");
+
+            for (int number = start; number <= end; number++)
+            {
+                bool isPrime = true;
+
+                for (int i = 2; i <= Math.Sqrt(number); i++)
+                {
+                    if (number % i == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
+                }
+
+                if (isPrime && number > 1)
+                {
+                    Console.Write(number);
+                }
+}
+
+28. find strong number
+
+using System;
+public class StrongNumberProgram
+{
+    public static void Main ()
+    {
+        int number = 0, sum = 0;
+        Console.WriteLine ("Enter a number");
+        number = Convert.ToInt32 (Console.ReadLine());
+
+        int quot = number;
+        int remainder;
+
+        while (quot != 0)
+        {
+         remainder = quot % 10;
+         int fact = CalculateFactorial(remainder);
+         quot = quot / 10;
+         sum = sum + fact;
+        }
+        if(sum == number)
+        {
+         Console.WriteLine (number + " is a Strong Number");
+        }
+        else
+        {
+         Console.WriteLine (number + " is not a Strong Number");
+        }
+    }
+
+    //Calulate Factorial of a number 
+    public static int CalculateFactorial(int number)
+    {
+        int fact = 1;
+        for (int i = 1; i <= number; i++)
+        {
+         fact = fact * i;
+        }
+        return fact;
+    }
+}  
+
+29. find perfect number
+
+int number,sum=0,n;
+            Console.Write("enter the Number");
+            number = int.Parse(Console.ReadLine());
+            n = number;
+            for (int i = 1; i < number;i++)
+            {
+                if (number % i == 0)
+                {
+                    sum=sum + i;
+                }
+            }
+                if (sum == n)
+                {
+                    Console.WriteLine("\n Entered number is a perfect number");
+                    Console.ReadLine();
+                }
+                else
+                {
+                    Console.WriteLine("\n Entered number is not a perfect number");
+                    Console.ReadLine();
+                }
+
+30. check armstrong number
+
+int  n,r,sum=0,temp;      
+       Console.Write("Enter the Number= ");      
+       n= int.Parse(Console.ReadLine());     
+       temp=n;      
+       while(n>0)      
+       {      
+        r=n%10;      
+        sum=sum+(r*r*r);      
+        n=n/10;      
+       }      
+       if(temp==sum)      
+        Console.Write("Armstrong Number.");      
+       else      
+        Console.Write("Not Armstrong Number.");  
+
+31. armstrong in given range
+
+int limit = 1000;
+
+            Console.Write($"Armstrong numbers up to {limit}: ");
+
+            for (int number = 1; number <= limit; number++)
+            {
+                int sumOfPowers = 0;
+                int n = number;
+                int numberOfDigits = (int)Math.Floor(Math.Log10(number) + 1);
+
+                while (n != 0)
+                {
+                    int digit = n % 10;
+                    sumOfPowers += (int)Math.Pow(digit, numberOfDigits);
+                    n /= 10;
+                }
+
+                if (sumOfPowers == number)
+                {
+                    Console.Write($"{number} ");
+                }
+            }
+
+
+32. cal no of digits in an integer
+
+int number = 0, count = 0;
+                Console.Write("Enter number :");
+                number = Convert.ToInt32(Console.ReadLine());
+                while (number > 0)
+                {
+                    number = number / 10;
+                    count++;
+                }
+                Console.WriteLine("Number of digits is : " + count);
+                Console.ReadLine();
+
+33. smallest and largest in an array
+34.
+
+35. rotation of elements of array left to right
+
+int[] nums = {1, 2, 8};
+         Console.WriteLine("\nArray1: [{0}]", string.Join(", ", nums));
+         var temp = nums[0];
+            for (var i = 0; i < nums.Length - 1; i++)
+            {
+                nums[i] = nums[i + 1];
+            }
+            nums[nums.Length - 1] = temp;
+            Console.WriteLine("\nAfter rotating array becomes: [{0}]", string.Join(", ", nums));
+
+36.find length of string without using function
+
+char s[] = "Programming is fun";
+    int i;
+
+    for (i = 0; s[i] != '\0'; ++i);
+    
+    Console.WriteLine("Length of the string: %d", i);
+
+37.remove spaces from string
+
+char s[] = "Programming is fun";
+s.Replace(" ","");
+Console.WriteLine(s.ToString());
+
+38. Palindrome or not
+
+//palindrome or not
+using System;
+int orgno=1221;
+int revno=0;
+int temp=orgno;
+while(temp>0){
+    int lastdigit=temp%10;
+    revno=revno*10+(lastdigit);
+    temp=temp/10;
+}
+if(orgno==revno){
+    Console.WriteLine("Entered number is a palindrome: "+revno);
+}
+else{
+    Console.WriteLine("Not a palindrome");
+}
+
+39. capitalize the first and last character of each word of string
+class Program
+    {
+        static void Main(string[] args)
+        {
+            string str1 = "python exercises";
+            Console.WriteLine("Original string: " + str1);
+            Console.WriteLine("After converting the first character of each word of the said string:\n" + test(str1));
+            str1 = "The quick brown Fox jumps over the little lazy Dog";
+            Console.WriteLine("\nOriginal string: " + str1);
+            Console.WriteLine("After converting the first character of each word of the said string:\n" + test(str1));
+        }
+        public static string test(string str1)
+        {
+            return string.Join(" ", str1.Split(' ').Select(str1 => char.ToUpper(str1[0]) + str1.Substring(1)));
+        }
+    }
+
+40. find the greatest pair from array
+
+ int[] arr1 = new int[5] { 1, 6, 3, 1, 3 };
+        Array.Sort(arr1);
+        Array.Reverse(arr1);
+
+        for (int i = 1; i < arr1.Length; i++)
+        {
+            if (arr1[i] == arr1[i - 1])
+            {
+                Console.WriteLine("The largest pair is ({0}, {1})", arr1[i], arr1[i-1]);
+                break;
+            }
+        }
